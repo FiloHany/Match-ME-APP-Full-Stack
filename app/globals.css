@@ -74,7 +74,11 @@
     padding: 0.5rem 1.25rem !important;
     border-radius: 0.5rem !important;
   }
-
+    @layer components {
+    .vertical-center {
+        height: calc(100vh - 64px);
+    }
+    }
   .navbar-button:hover {
     background-color: white !important;
     color: #ec4899 !important;
