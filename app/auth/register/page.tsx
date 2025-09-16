@@ -1,5 +1,5 @@
 import React from "react";
 
-export default function RegisterPages() {
-    return <div>RegisterPages</div>
+export default function RegisterPage() {
+  return <div>RegisterPage</div>;
 }

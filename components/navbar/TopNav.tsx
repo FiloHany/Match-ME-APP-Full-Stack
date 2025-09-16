@@ -1,3 +1,4 @@
+"use client";
 import {
     Button,
     Navbar,
@@ -52,7 +53,7 @@ export default function TopNav() {
                 <NavbarContent justify="end">
                     <Button
                         as={Link}
-                        href="/login"
+                        href="auth/login"
                         variant="bordered"
                         className="text-white"
                     >
@@ -60,7 +61,7 @@ export default function TopNav() {
                     </Button>
                     <Button
                         as={Link}
-                        href="/register"
+                        href="auth/register"
                         variant="bordered"
                         className="text-white"
                     >
