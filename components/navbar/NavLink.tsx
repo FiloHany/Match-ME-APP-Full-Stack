@@ -10,19 +10,25 @@ type Props = {
   label: string;
 };
 
-export default function NavLink({
-  href,
-  label,
-}: Props) {
+export default function NavLink({ href, label }: Props) {
   const pathname = usePathname();
-  console.log("pathname:::",pathname)
+  const isActive = pathname === href;
+  
   return (
     <NavbarItem
-      isActive={pathname === href}
+      isActive={isActive}
       as={Link}
       href={href}
+      className={`
+        text-xl uppercase font-medium transition-all duration-200 
+        px-4 py-2 rounded-md cursor-pointer
+        ${isActive 
+          ? 'text-navbar-active bg-navbar-hover font-semibold' 
+          : 'text-navbar-default hover:text-navbar-active hover:bg-navbar-hover'
+        }
+      `}
     >
-    {label}
+      {label}
     </NavbarItem>
   );
 }

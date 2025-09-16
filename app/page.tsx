@@ -12,6 +12,7 @@ export default function Home() {
         color="primary"
         variant="bordered"
         startContent={<FaRegSmile size={20} />}
+        className="bg-gradient-to-r from-pink-500 to-red-500 text-white border-none hover:from-pink-600 hover:to-red-600"
       >
         Click me!
       </Button>

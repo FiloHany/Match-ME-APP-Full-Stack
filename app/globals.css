@@ -2,3 +2,137 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom styles for HeroUI Navbar */
+@layer components {
+  /* Ensure navbar gradient background works properly */
+  .navbar-gradient {
+    background: linear-gradient(to right, #f472b6, #f87171, #ec4899) !important;
+  }
+
+  /* Override HeroUI navbar default styles */
+  [data-slot="navbar"] {
+    background: linear-gradient(to right, #f472b6, #f87171, #ec4899) !important;
+    border-bottom: none !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Navbar brand styling */
+  [data-slot="brand"] {
+    color: white !important;
+  }
+
+  /* Navbar item base styling */
+  [data-slot="item"] {
+    color: white !important;
+    font-size: 1.25rem !important;
+    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease-in-out !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem !important;
+  }
+
+  /* Active navbar item styling */
+  [data-slot="item"][data-active="true"] {
+    color: #fef3c7 !important;
+    font-weight: 600 !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  /* Navbar item hover effect */
+  [data-slot="item"]:hover {
+    color: #fef3c7 !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  /* Navbar button base styling */
+  [data-slot="base"][data-variant="bordered"] {
+    border-color: white !important;
+    color: white !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+  }
+
+  /* Navbar button hover effect */
+  [data-slot="base"][data-variant="bordered"]:hover {
+    background-color: white !important;
+    color: #ec4899 !important;
+    border-color: white !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Specific navbar button styling */
+  .navbar-button {
+    border-color: white !important;
+    color: white !important;
+    background-color: transparent !important;
+    transition: all 0.2s ease-in-out !important;
+    font-size: 0.875rem !important;
+    font-weight: 500 !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 0.5rem !important;
+  }
+
+  .navbar-button:hover {
+    background-color: white !important;
+    color: #ec4899 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Navbar content spacing */
+  [data-slot="content"] {
+    gap: 1rem !important;
+  }
+
+  /* Navbar wrapper padding */
+  [data-slot="wrapper"] {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Brand icon and text alignment */
+  [data-slot="brand"] svg {
+    margin-right: 0.5rem !important;
+  }
+}
+
+/* Additional utilities for navbar */
+@layer utilities {
+  .navbar-gradient-bg {
+    background: linear-gradient(to right, #f472b6, #f87171, #ec4899);
+  }
+  
+  .text-navbar-active {
+    color: #fef3c7;
+  }
+  
+  .text-navbar-default {
+    color: white;
+  }
+  
+  .bg-navbar-hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  [data-slot="item"] {
+    font-size: 1rem !important;
+    padding: 0.375rem 0.75rem !important;
+  }
+  
+  .navbar-button {
+    font-size: 0.75rem !important;
+    padding: 0.375rem 1rem !important;
+  }
+  
+  [data-slot="wrapper"] {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}

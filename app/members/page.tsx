@@ -7,7 +7,9 @@ export default function MembersPage() {
       <h3 className="text-3xl">
         This will be the members page
       </h3>
-      <Link href="/">Go back home</Link>
+      <Link href="/" className="text-blue-600 hover:text-blue-800 underline">
+        Go back home
+      </Link>
     </div>
   );
 }
