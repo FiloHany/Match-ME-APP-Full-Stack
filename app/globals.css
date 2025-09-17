@@ -74,11 +74,7 @@
     padding: 0.5rem 1.25rem !important;
     border-radius: 0.5rem !important;
   }
-    @layer components {
-    .vertical-center {
-        height: calc(100vh - 64px);
-    }
-    }
+
   .navbar-button:hover {
     background-color: white !important;
     color: #ec4899 !important;
@@ -120,6 +116,41 @@
   
   .bg-navbar-hover {
     background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Form Input Styling for HeroUI */
+@layer components {
+  /* Input field styling */
+  [data-slot="input-wrapper"] {
+    border: 2px solid #e5e7eb !important;
+    border-radius: 0.5rem !important;
+    background-color: white !important;
+  }
+  
+  [data-slot="input-wrapper"]:hover {
+    border-color: #f472b6 !important;
+  }
+  
+  [data-slot="input-wrapper"][data-focus="true"] {
+    border-color: #ec4899 !important;
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1) !important;
+  }
+  
+  [data-slot="input"] {
+    color: #374151 !important;
+    font-size: 1rem !important;
+  }
+  
+  [data-slot="label"] {
+    color: #6b7280 !important;
+    font-weight: 500 !important;
+  }
+  
+  /* Card styling */
+  [data-slot="base"][class*="Card"] {
+    border: 1px solid #f3f4f6 !important;
+    border-radius: 1rem !important;
   }
 }
 

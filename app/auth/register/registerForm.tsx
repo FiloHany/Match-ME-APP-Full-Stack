@@ -31,62 +31,72 @@ export default function RegisterForm() {
   };
 
   return (
-    <Card className="w-3/5 mx-auto">
-      <CardHeader className="flex flex-col items-center justify-center">
-        <div className="flex flex-col gap-2 items-center text-default">
-          <div className="flex flex-row items-center gap-3">
-            <GiPadlock size={30} />
-            <h1 className="text-3xl font-semibold">
-              Register
-            </h1>
+    <div className="flex justify-center items-center min-h-screen bg-gray-50 px-4">
+      <Card className="w-full max-w-md">
+        <CardHeader className="flex flex-col items-center justify-center pb-6 pt-8">
+          <div className="flex flex-col gap-2 items-center">
+            <div className="flex flex-row items-center gap-3">
+              <GiPadlock size={30} className="text-gray-700" />
+              <h1 className="text-3xl font-semibold text-gray-800">
+                Register
+              </h1>
+            </div>
+            <p className="text-gray-500">
+              Welcome to NextMatch
+            </p>
           </div>
-          <p className="text-neutral-500">
-            Welcome to NextMatch
-          </p>
-        </div>
-      </CardHeader>
-      <CardBody>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="space-y-4">
-            <Input
-              defaultValue=""
-              label="Name"
-              variant="bordered"
-              {...register("name")}
-              isInvalid={!!errors.name}
-              errorMessage={errors.name?.message}
-            />
-            <Input
-              defaultValue=""
-              label="Email"
-              variant="bordered"
-              {...register("email")}
-              isInvalid={!!errors.email}
-              errorMessage={errors.email?.message}
-            />
-            <Input
-              defaultValue=""
-              label="Password"
-              variant="bordered"
-              type="password"
-              {...register("password")}
-              isInvalid={!!errors.password}
-              errorMessage={
-                errors.password?.message
-              }
-            />
-            <Button
-              isLoading={isSubmitting}
-              isDisabled={!isValid}
-              fullWidth
-              color="default"
-              type="submit"
-            >
-              Register
-            </Button>
-          </div>
-        </form>
-      </CardBody>
-    </Card>
+        </CardHeader>
+        <CardBody className="px-8 pb-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <div>
+              <Input
+                {...register("name")}
+                type="text"
+                label="Name"
+                variant="flat"
+                isInvalid={!!errors.name}
+                errorMessage={errors.name?.message}
+                className="w-full"
+              />
+            </div>
+            
+            <div>
+              <Input
+                {...register("email")}
+                type="email"
+                label="Email"
+                variant="flat"
+                isInvalid={!!errors.email}
+                errorMessage={errors.email?.message}
+                className="w-full"
+              />
+            </div>
+            
+            <div>
+              <Input
+                {...register("password")}
+                type="password"
+                label="Password"
+                variant="flat"
+                isInvalid={!!errors.password}
+                errorMessage={errors.password?.message}
+                className="w-full"
+              />
+            </div>
+            
+            <div className="pt-4">
+              <Button
+                type="submit"
+                className="w-full bg-slate-800 text-white"
+                isDisabled={!isValid}
+                isLoading={isSubmitting}
+              >
+                Register
+              </Button>
+            </div>
+          </form>
+        </CardBody>
+      </Card>
+    </div>
   );
 }
